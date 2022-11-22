@@ -1,0 +1,209 @@
+.recogerEnviarContainer{
+    margin-top: 80px;
+    padding: 40px 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+.recogerEnviarContainer .navbarRecoger{
+    width: 100%;
+    display: flex;
+}
+
+.recogerEnviarContainer .sectionRecoger{
+    position: relative;
+    max-width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    overflow-x: hidden;
+}
+
+.recogerEnviarContainer .sectionRecoger .section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* border: 1px dashed black; */
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    transition: .3s;
+    z-index: 0;
+    padding-top: 100px;
+}
+
+.recogerEnviarContainer .formRecogida{
+    width: 100%;
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+}
+
+.recogerEnviarContainer .customSelect{
+    width: 100%;
+    border: 1px solid var(--blink-main);
+    height: 50px;
+    margin-top: 6px;
+    padding-left: 12px;
+    background-color: #fff;
+}
+
+.datePicker{
+    display: none;
+}
+
+.recogerEnviarContainer h3{
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: .0125em;
+    line-height: normal;
+    margin-bottom: 8px;
+}
+
+.recogerEnviarContainer p{
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: normal;
+    margin: 8px 0;
+}
+
+.recogerEnviarContainer .form{
+    width: 100%;
+    display: flex;
+    padding: 36px;
+}
+
+.recogerEnviarContainer .subform{
+    width: 50%;
+}
+
+.recogerEnviarContainer .subform:nth-child(2){
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.recogerEnviarContainer .subform:nth-child(2) > div{
+    width: 100%;
+}
+
+.recogerEnviarContainer .formItem{
+    padding: 10px 20px;
+}
+
+.recogerEnviarContainer .footerRecoger{
+    padding: 20px 120px;
+    margin-top: 40px;
+    border-radius: 8px;
+    color: #fff;
+    background-color: var(--color-storange);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.recogerEnviarContainer .alert{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #2196f3;
+    border: 1px solid #2196f3;
+    border-radius: 4px;
+    margin-top: 50px;
+}
+
+.recogerEnviarContainer .border{
+    width: 8px;
+    bottom: 0;
+    top: 0;
+    background-color: #DCEFFD;
+    border-bottom-left-radius: inherit;
+    border-top-left-radius: inherit;
+}
+
+.recogerEnviarContainer .icon{
+    width: 60px;
+    height: 60px;
+    background-color: #DCEFFD;
+    color: #2196f3;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 10px 20px;
+}
+
+.recogerEnviarContainer .text{
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+@media (max-width: 1400px){
+    .recogerEnviarContainer {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 900px){
+    .recogerEnviarContainer .alert {
+        display: flex;
+        flex-direction: column;
+        padding: 0 30px 20px;
+    }
+
+    .recogerEnviarContainer .footerRecoger {
+        font-size: 12px;
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 740px){
+    .recogerEnviarContainer h3 {
+        font-size: 16px;
+    }
+
+    .recogerEnviarContainer h4 {
+        font-size: 14px;
+    }
+
+    .recogerEnviarContainer .text{
+        font-size: 14px;
+    }
+
+    .css-1e6y48t-MuiButtonBase-root-MuiButton-root{
+        font-size: 12px !important;
+    }
+}
+
+@media (max-width: 600px){
+    .css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+        line-height: normal !important;
+    }
+
+    .recogerEnviarContainer {
+        padding: 30px 10px;
+    }
+}
+
+@media (max-width: 450px){
+    .recogerEnviarContainer h3 {
+        font-size: 14px;
+    }
+
+    .recogerEnviarContainer h4 {
+        font-size: 12px;
+    }
+
+    .recogerEnviarContainer .text{
+        font-size: 12px;
+    }
+
+    .recogerEnviarContainer p {
+        font-size: 12px;
+    }
+}

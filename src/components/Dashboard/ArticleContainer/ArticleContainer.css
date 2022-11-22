@@ -1,0 +1,237 @@
+.articleContainer{
+    padding: 130px 120px 0;
+}
+
+.articleContainer .volver{
+    cursor: pointer;
+    color: var(--color-storange);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.articleContainer .secondaryButtons.secondaryFix > div{
+    font-size: 14px;
+}
+
+.articleContainer .volverIcon{
+    margin: 0 7px;
+}
+
+/* .articleContainer .info{
+    min-width: 400px;
+} */
+
+.articleContainer .article{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 30px;
+}
+
+.article .images,
+.article .info{
+    padding: 0 40px;
+}
+
+.articleContainer .titleContainer{
+    border-bottom: 1px solid rgba(0,0,0,.12);
+}
+
+.articleContainer .titleEdit{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.articleContainer .title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.articleContainer .title h1{
+    margin: 0;
+    font-size: 24px;
+}
+
+.articleContainer .editIcon{
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--color-storange);
+}
+
+.articleContainer .caracteristicas{
+    line-height: 1.5;
+    padding-bottom: 20px;
+}
+
+.articleContainer .caracteristicas h3{
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.articleContainer .caracteristicas p{
+    margin: 0;
+}
+
+.articleContainer .caracteristicas{
+    border-bottom: 1px solid rgba(0,0,0,.12);
+}
+
+.articleContainer .title.propertie{
+    margin-top: 20px;
+}
+
+.articleContainer .title.propertie h1{
+    font-size: 16px;
+}
+
+.articleContainer .descripcion h3{
+    font-size: 16px;
+}
+
+.articleContainer .plusIcon{
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.articleContainer .propietario h3,
+.articleContainer .gestion h3,
+.articleContainer .acciones h3,
+.articleContainer .descripcion h3{
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.articleContainer .estado{
+    border: 1px solid var(--color-storange);
+    color: var(--color-storange);
+    border-radius: 14px;
+    width: 150px;
+    text-align: center;
+    height: 30px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+}
+
+.articleContainer .buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+.articleContainer .buttonsEdit{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.articleContainer .secondaryButtons{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+}
+
+.articleContainer .secondaryButtons.secondaryFix{
+    margin-top: 0;
+}
+
+.articleContainer .descripcionPropietario{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.articleContainer .descripcionPropietario p{
+    margin: 0;
+}
+
+@media (max-width : 1250px){
+    .articleContainer .title h1 {
+        margin: 0;
+        font-size: 20px;
+    }
+
+    .articleContainer .caracteristicas h3 {
+        font-size: 18px;
+    }
+
+    .articleContainer p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width : 1080px){
+    .articleContainer {
+        padding: 130px 30px 0;
+    }
+
+    .imageCarousel .container {
+        max-width: 300px;
+    }
+
+    .imageCarousel .card {
+        width: 300px;
+    }
+
+    .article .images, .article .info {
+        padding: 0 20px;
+    }
+
+    .articleContainer .article {
+        margin-top: 20px;
+        padding: 0;
+    }
+}
+
+@media (max-width : 700px){
+    .articleContainer{
+        padding: 110px 15px 0;
+    }
+
+    .articleContainer .article{
+        flex-direction: column-reverse;
+    }
+
+    .article .images, .article .info {
+        width: 100%;
+    }
+
+    .article .images{
+        margin-top: 20px;
+    }
+}
+
+@media (max-width : 400px){
+    .imageCarousel .container {
+        max-width: 200px;
+    }
+
+    .imageCarousel .card {
+        width: 200px;
+    }
+
+    .articleContainer .secondaryButtons.secondaryFix {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .articleContainer .secondaryButtons button,
+    .articleContainer .secondaryButtons.secondaryFix > div{
+        margin-bottom: 10px;
+        height: 30px !important;
+        font-size: 12px;
+    }
+
+    .articleContainer .secondaryButtons {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+
+
+}

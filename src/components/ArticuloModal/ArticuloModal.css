@@ -1,0 +1,56 @@
+.articuloModal{
+    border: 1px solid rgba(175, 175, 175, 0.6);
+    border-radius: 4px;
+    margin: 0 0 20px;
+    padding: 16px;
+    display: flex;
+    height: fit-content;
+}
+
+.articuloModal .articleInfo{
+    padding: 0 20px;
+    position: relative;
+}
+
+.articuloModal p{
+    margin: 0;
+    line-height: 1.25rem;
+}
+
+.articuloModal .title{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: normal;
+}
+
+.articuloModal .info{
+    font-size: 14px;
+    color: #00000099;
+}
+
+.articuloModal .articleImage{
+    width: 150px;
+    height: fit-content;
+}
+
+.articuloModal img{
+    max-width: 100%;
+    height: 200px;
+    border-radius: 4px;
+}
+
+.articuloModal .estado{
+    cursor: pointer;
+    margin: 10px 0;
+    border: 1px solid var(--color-storange);
+    color: var(--color-storange);
+    border-radius: 14px;
+    width: 150px;
+    text-align: center;
+    height: 30px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}

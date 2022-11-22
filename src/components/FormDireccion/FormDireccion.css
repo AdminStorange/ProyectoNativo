@@ -1,0 +1,82 @@
+.formDireccion{
+    width: 100%;
+    height: fit-content;
+    padding: 40px;
+    box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.formDireccion .stepItem{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.formDireccion .direccionContainer{
+    width: 40%;
+    margin-bottom: 20px;
+}
+
+.formDireccion .step{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    background-color: var(--color-storange);
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formDireccion .step h4,
+.formDireccion .step p{
+    margin: 0;
+}
+
+@media (max-width: 1600px){
+    .formDireccion .direccionContainer{
+        width: 50%;
+    }
+}
+
+@media (max-width: 1200px){
+    .formDireccion .direccionContainer{
+        width: 60%;
+    }
+}
+
+@media (max-width: 1000px){
+    .formDireccion .direccionContainer{
+        width: 80%;
+    }
+}
+
+@media (max-width: 800px){
+    .formDireccion .direccionContainer{
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px){
+    .formDireccion .stepItem{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .formDireccion h3{
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .formDireccion .step{
+        margin-bottom: 5px;
+    }
+
+    .formDireccion {
+        padding: 20px 10px;
+    }
+}

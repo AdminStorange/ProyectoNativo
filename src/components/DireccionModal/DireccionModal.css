@@ -1,0 +1,87 @@
+.direccionModal{
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* color: #fff; */
+    /* font-weight: bold; */
+    z-index: 60;
+    /* transition: .3s; */
+}
+
+.direccionModal.activeModal{
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.direccionModal .modalContainer{
+    border-radius: 10px;
+    padding: 30px;
+    width: 40%;
+    height: 70%;
+    background-color: #fff;
+    overflow: overlay;
+}
+
+.direccionModal .articleList{
+    overflow-y: scroll;
+    height: 90%;
+}
+
+.direccionModal .articulosCarrito{
+    padding: 0 20px;
+}
+
+.direccionModal .buttonContainer{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;  
+}
+
+.direccionModal .closeModalIcon{
+    cursor: pointer;
+    font-size: 30px;
+    color: var(--color-storange);
+}
+
+.direccionModal .direccionContainer{
+    height: 70%;
+}
+
+@media (max-width: 1500px){
+    .direccionModal .modalContainer {
+        width: 50%;
+    }
+}
+
+@media (max-width: 1300px){
+    .direccionModal .modalContainer {
+        width: 60%;
+    }
+}
+
+@media (max-width: 900px){
+    .direccionModal .modalContainer {
+        width: 85%;
+        height: 85%;
+    }
+}
+
+@media (max-width: 600px){
+    .direccionModal .modalContainer {
+        width: 95%;
+        height: 95%;
+    }
+}
+
+@media (max-width: 400px){
+    .direccionModal .modalContainer {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
