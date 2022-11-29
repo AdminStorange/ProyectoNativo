@@ -42,13 +42,13 @@ const CarritoDeEnvio = () => {
 
     const classes = useStyles()
     const navigate = useNavigate()
-    const { carrito, setFormEnvioPage, setActiveModal, actualizarEstadoEnvio, isLoading, ids, setIds } = useContext(GlobalContext)
+    const { webkitBrowser, browser, carrito, setFormEnvioPage, setActiveModal, actualizarEstadoEnvio, isLoading, ids, setIds } = useContext(GlobalContext)
 
     useEffect(() => {
     }, [carrito])
 
     return (
-        <div className='test'>
+        <div className={browser === webkitBrowser ? 'test safari' : 'test'}>
             <div className='carritoDeEnvio articlesList'>
                 {carrito !== null && carrito.length !== 0 ? (
                     <>
@@ -95,7 +95,6 @@ const CarritoDeEnvio = () => {
                                 setFormEnvioPage(1)
                                 }}
                                 className={classes.button}>
-                                <FontAwesomeIcon style={{ margin: '0 8px' }} icon={faArrowDown} />
                                 Siguiente
                             </Button>
                         </div>

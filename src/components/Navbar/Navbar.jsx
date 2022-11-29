@@ -16,16 +16,16 @@ import { useNavigate } from 'react-router-dom';
 import { GlobalContext } from '../../context/GlobalStateContext';
 import './Navbar.css'
 
-const pages = [
-    {text: 'Recoger/Enviar', path:'/pickup_send'},
-    {text: 'Mis articulos', path:'/dashboard'},
-    {text: 'Perfil', path:'/perfil'}
-];
-
 const Navbar = () => {
 
-    const { propietario, setChange, change, setLoaderState, restartAll, setDireccionSelect, setOe, oe, setFormEnvioPage, carrito, formatStrings } = useContext(GlobalContext)
+    const { webkitBrowser, browser, propietario, setChange, change, setLoaderState, restartAll, setDireccionSelect, setOe, oe, setFormEnvioPage, carrito, formatStrings } = useContext(GlobalContext)
     const navigate = useNavigate()
+
+    const pages = [
+        {text: 'Recoger/Enviar', path:'/pickup_send'},
+        {text: 'Mis articulos', path:'/dashboard'},
+        {text: 'Perfil', path:'/perfil'}
+    ]
 
     const [anchorElNav, setAnchorElNav] = useState(null);
     const [anchorElUser, setAnchorElUser] = useState(null);
@@ -216,7 +216,7 @@ const Navbar = () => {
                                                 <Avatar style={{ backgroundColor: '#795548' }} alt={propietario.nombre} src="/static/images/avatar/2.jpg" />
                                             </IconButton>
                                             <h3 className='name'>
-                                                {`${formatStrings(propietario.nombre)} ${formatStrings(propietario?.apellido)}`}
+                                                {`${formatStrings(propietario.nombre)} ${formatStrings(propietario.apellido || '')}`}
                                             </h3>
                                             <p className='email'>
                                                 {propietario.email}

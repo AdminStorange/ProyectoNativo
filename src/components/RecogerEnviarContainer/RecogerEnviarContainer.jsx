@@ -116,13 +116,13 @@ const isWeekend = (date) => {
 const RecogerEnviarContainer = () => {
 
     const classes = useStyles()
-    const { direcciones, setActiveDireccionModal, buscarDireccion, buscarArticulos, articulos, carrito, setActiveModal, propietario, buscarPropietario, buscarOrdenes, ordenesEnProgreso } = useContext(GlobalContext)
+    const { webkitBrowser, browser, direcciones, setActiveDireccionModal, buscarDireccion, buscarArticulos, articulos, carrito, setActiveModal, propietario, buscarPropietario, buscarOrdenes, ordenesEnProgreso } = useContext(GlobalContext)
 
     const [buttonState, setButtonState] = useState([true, false, false])
     const [value, setValue] = useState(dayjs('2022-04-07'))
     const [direccionSelect, setDireccionSelect] = useState("default")
 
-    const handleResize = () =>{
+    const handleResize = () => {
         const width = document.querySelector('.navbarRecoger').clientWidth
 
         document.querySelectorAll('.sectionRecoger .section').forEach(el => {
@@ -166,85 +166,14 @@ const RecogerEnviarContainer = () => {
                                 document.querySelector('.carritoModal').style.top = `${window.scrollY}px`
                                 document.body.style.overflowY = "hidden"
                                 setActiveModal(true)
-                                }} className={classes.button}>
+                            }} className={classes.button}>
                                 Agregar
                             </Button>
                         </div>
                     </div>
                 )}
                 <OrdenesEnProgreso />
-                <div className="section">
-                    {/* <div className='formRecogida'>
-                        <div className="form">
-                            <div className="subform">
-                                <h3>Formulario de Recogida</h3>
-                                <div className="formItem">
-                                    <p>¿Qué artículos necesitas que recojamos?</p>
-                                    <CssTextField
-                                        id="outlined-basic"
-                                        label="Describe los artículos"
-                                        variant="outlined"
-                                        multiline
-                                    />
-                                </div>
-                                <div className="formItem">
-                                    <p>Seleccione la dirección de envío</p>
-                                    {direcciones !== null ? (
-                                        <>
-                                            <Select
-                                                name='direccion'
-                                                className={`customSelect ${classes.root}`}
-                                                value={direccionSelect}
-                                                onChange={ e => setDireccionSelect(e.target.value)}
-                                            >
-                                                <MenuItem value="default">Seleccione su dirección</MenuItem>
-                                                {direcciones.map((dir, index) =>{
-                                                    return (
-                                                        <MenuItem key={`direccion${index}`} value={dir.direccion}>{dir.direccion}</MenuItem>
-                                                    )
-                                                })}
-                                            </Select>
-                                            <Button
-                                            onClick={() => {
-                                                document.body.style.overflowY = "hidden"
-                                                setActiveDireccionModal(true)
-                                            }}
-                                            className={classes.button}>
-                                                Agregar nueva dirección
-                                            </Button>
-                                        </>
-                                    ):(
-                                        <>Cargando</>
-                                    )}
-                                </div>
-                            </div>
-                            <div className="subform">
-                                <div>
-                                    <p>¿Qué día te gustaría que pasemos por tus cosas?</p>
-                                    <LocalizationProvider dateAdapter={AdapterDayjs}>
-                                        <StaticDatePicker
-                                            orientation="landscape"
-                                            openTo="day"
-                                            value={value}
-                                            shouldDisableDate={isWeekend}
-                                            onChange={(newValue) => {
-                                                setValue(newValue)
-                                            }}
-                                            renderInput={(params) => <TextField {...params} />}
-                                        />
-                                    </LocalizationProvider>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="buttons">
-                            <Button className={classes.buttonWhite}>
-                                Limpiar
-                            </Button>
-                            <Button className={classes.button}>
-                                Solicitar
-                            </Button>
-                        </div>
-                    </div> */}
+                <div className="section" style={{justifyContent: 'center'}}>
                     <div className='alert'>
                         <div className='border'></div>
                         <div className='icon'>
@@ -268,7 +197,7 @@ const RecogerEnviarContainer = () => {
                 pauseOnFocusLoss
                 draggable
                 pauseOnHover />
-        </div>
+        </div >
     )
 }
 

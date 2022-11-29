@@ -1,12 +1,15 @@
-import { collection, getDocs } from "firebase/firestore";
-import React, { createContext, useState } from "react";
-import { toast } from "react-toastify";
-import Swal from "sweetalert2";
-import { db } from "../service/Firebase";
+import React, { createContext, useState } from "react"
+import navigatorDetector from "../tools/NavigatorDetector"
+import { toast } from "react-toastify"
+import Swal from "sweetalert2"
+import { useNavigate } from "react-router-dom"
 
 export const GlobalContext = createContext()
 
 const GlobalStateContext = ({ children }) => {
+
+  const [browser, setBrowser] = useState(navigatorDetector)
+  const [webkitBrowser, setWebkitBrowser] = useState('Safari')
 
   const [isLoading, setIsLoading] = useState(false)
   const [loaderState, setLoaderState] = useState(1)
@@ -332,6 +335,14 @@ const GlobalStateContext = ({ children }) => {
         setFormEnvioPage(-1)
         buscarArticulos()
         buscarOrdenes()
+        setOe({
+          m3: '',
+          direccion: '',
+          tipoServicio: 'normal',
+          fecha: new Date(Date.now()).toISOString().slice(0,10),
+          total: '',
+          fechaServicio: new Date(Date.now()).toISOString().slice(0,10)
+        })
       })
   }
 
@@ -414,6 +425,88 @@ const GlobalStateContext = ({ children }) => {
     .then(() => obtenerServicio())
   }
 
+  const eliminarArticulo = (id, navigate) =>{
+    let details = {
+      idArticulo: id
+    }
+    setIsLoading(true)
+    fetch("https://api.storange.pe/eliminarArticulo", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+      },
+      body: encodePetition(details)
+    })
+    .then(() => {
+      toast("El artículo se borro de la lista")
+      buscarArticulos()
+      setIsLoading(false)
+      window.scrollTo(0, 0)
+      setChange(!change)
+      setLoaderState(0)
+      setTimeout(() => navigate('/dashboard'), 500)
+    })
+  }
+
+  const ventaArticulo = (id, precio) => {
+    let details = {
+      idArticulo: id,
+      precio
+    }
+    setIsLoading(true)
+    fetch("https://api.storange.pe/venderArticulo", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+      },
+      body: encodePetition(details)
+    })
+    .then(() => {
+      toast("El artículo se puso en venta")
+      obtenerArticulo(id)
+      setIsLoading(false)
+    })
+  }
+
+  const cancelarVenta = (id) => {
+    let details = {
+      idArticulo: id
+    }
+    setIsLoading(true)
+    fetch("https://api.storange.pe/cancelarVenta", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+      },
+      body: encodePetition(details)
+    })
+    .then(() => {
+      toast("Se canceló la venta")
+      obtenerArticulo(id)
+      setIsLoading(false)
+    })
+  }
+
+  const cambiarPrecio = (id, precio) => {
+    let details = {
+      idArticulo: id,
+      precio
+    }
+    setIsLoading(true)
+    fetch("https://api.storange.pe/actualizarPrecio", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+      },
+      body: encodePetition(details)
+    })
+    .then(() => {
+      toast("Se actualizó el precio de venta")
+      obtenerArticulo(id)
+      setIsLoading(false)
+    })
+  }
+
   return (
     <GlobalContext.Provider
       value={{
@@ -453,7 +546,10 @@ const GlobalStateContext = ({ children }) => {
         direccionSelect, setDireccionSelect,
         direccionName, setDireccionName,
         direccionAutoSelect, setDireccionAutoSelect,
-        formatStrings
+        formatStrings,
+        browser, webkitBrowser,
+        eliminarArticulo, ventaArticulo,
+        cancelarVenta, cambiarPrecio
       }}
     >
       {children}

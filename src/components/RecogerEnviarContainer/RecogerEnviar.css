@@ -21,14 +21,13 @@
 .recogerEnviarContainer .sectionRecoger .section{
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     /* border: 1px dashed black; */
     box-sizing: border-box;
     flex: 0 0 auto;
     transition: .3s;
     z-index: 0;
-    padding-top: 100px;
 }
 
 .recogerEnviarContainer .formRecogida{
