@@ -5,7 +5,7 @@ import './Loader.css'
 
 const Loader = () => {
 
-    const {loaderState, setLoaderState, change, propietario} = useContext(GlobalContext)
+    const {loaderState, setLoaderState, change} = useContext(GlobalContext)
 
     const navigate = useNavigate()
 
@@ -16,7 +16,7 @@ const Loader = () => {
             setLoaderState(1)
             document.body.style.overflowY = "hidden"
             setTimeout(()=> {
-                setLoaderState(2)
+                setLoaderState(1)
                 document.body.style.overflowY = "visible"
             }, 800)
         }

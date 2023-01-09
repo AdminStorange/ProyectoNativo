@@ -83,7 +83,6 @@ const LoginContainer = () => {
       setPassword(value)
       setPasswordAction(true)
     }
-
   }
 
   const verifyCaptcha = () => {
@@ -96,10 +95,10 @@ const LoginContainer = () => {
 
     setIsLoading(true)
 
-    fetch("https://api.storange.pe/login", {
+    fetch("https://api.storange.pe/apilogin", {
       method: "POST",
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+        "Content-Type": "​application/x-www-form-urlencoded;charset=UTF-8",
       },
       body: encodePetition(details)
     })
@@ -108,7 +107,7 @@ const LoginContainer = () => {
         if (res.length > 0) {
           setUserIsTrusted(true)
           setSwalCambio(true)
-          navigate('/dashboard')
+          navigate('/dashboards')
           setIdPropietario(res[0].idPropietario)
           localStorage.setItem('trustedUser', res[0].idPropietario)
         }
